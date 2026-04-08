@@ -35,10 +35,10 @@
   --bg: #f0f4f8;
   --surface: #ffffff;
   --surface2: #e8eef5;
-  --header-bg1: #1e3a5f;
-  --header-bg2: #0f2744;
-  --summary-bg1: #1e3a5f;
-  --summary-bg2: #0f2744;
+  --header-bg1: #BFCED6;
+  --header-bg2: #BFCED6;
+  --summary-bg1: #D9E1E2;
+  --summary-bg2: #D9E1E2;
   --border: rgba(56,189,248,0.2);
   --accent: #0284c7;
   --accent2: #0369a1;
@@ -324,12 +324,27 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin
       🌙
     </button>
   </div>
-  <div style="display:flex;align-items:center;justify-content:space-between;margin-top:4px;">
-    <div class="subtitle">AQL Inspection Tool · MIL-STD-105E</div>
+
+<div style="margin-top:4px;">
+  <!-- บรรทัดบน -->
+  <div class="subtitle">
+    AQL Inspection Tool · MIL-STD-105E
+  </div>
+
+  <!-- บรรทัดล่าง -->
+  <div style="display:flex;justify-content:space-between;align-items:center;">
+    
+    <!-- ซ้าย -->
+    <div style="font-size:11px;color:var(--text-muted);">
+      QAP S&J by Utsanee_N
+    </div>
+
+    <!-- ขวา -->
     <div style="font-size:11px;color:var(--text-muted);font-family:'DM Mono',monospace;">
       v<span id="ver_display"></span>
-    </div>
+   </div>
   </div>
+ </div>
 </div>
 
 <div class="content">
@@ -361,11 +376,11 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin
     <div class="card-body open" id="body_incoming">
       <div class="field">
         <label>Qty Incoming (pcs)</label>
-        <input type="number" id="qty_incoming" placeholder="e.g. 20000" oninput="onIncomingChange()">
+        <input type="number" id="qty_incoming" placeholder="e.g. 10000" oninput="onIncomingChange()">
       </div>
       <div class="field">
         <label>Qty Carton Incoming (Carton)</label>
-        <input type="number" id="qty_carton" placeholder="e.g. 40" oninput="onIncomingChange()">
+        <input type="number" id="qty_carton" placeholder="e.g. 10" oninput="onIncomingChange()">
       </div>
     </div>
   </div>
@@ -531,7 +546,7 @@ input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin
 
 <script>
 // ===== APP VERSION =====
-const APP_VERSION = "1.1.0";
+const APP_VERSION = "1.2.0";
 const APP_BUILD   = "2026-04";
 
 // ===== SAMPLING TABLE DATA =====
@@ -810,7 +825,7 @@ checkVersionUpdate();
 // Service Worker registration for offline use
 if ('serviceWorker' in navigator) {
   const swCode = `
-const CACHE = 'qc-sampling-v1.1.0';
+const CACHE = 'qc-sampling-v1.2.0';
 const FONTS = [
   'https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap'
 ];
